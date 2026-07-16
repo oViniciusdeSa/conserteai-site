@@ -4,7 +4,12 @@ import { useEffect, useRef, useState } from "react";
 const logoImg = "/logo-conserteai.png";
 const navLogoImg = "/logo-conserteai.png";
 const marcioImg = "/marcio-tecnico.png";
-const WA = "https://wa.me/5511925331686?text=Ol%C3%A1!%20Preciso%20de%20atendimento%20da%20ConserteA%C3%AD%2024h.";
+const WA =
+"https://wa.me/5511925331686?text=" +
+encodeURIComponent(
+"Olá! Encontrei o site da ConserteAí e gostaria de solicitar um orçamento. Podem me ajudar?"
+);
+
 const PHONE = "(11) 92533-1686";
 const TEL = "tel:+5511925331686";
 const EMAIL = "contatoconserteai24h@gmail.com";
@@ -12,7 +17,10 @@ const INSTAGRAM = "https://www.instagram.com/conserteai24h?igsh=MWthM3U3cXpkeHow
 const FACEBOOK = "https://www.facebook.com/profile.php?id=61591863178665";
 const CNPJ = "26.977.406/0001-12";
 function waService(s: string) {
-  return "https://wa.me/5511925331686?text=" + encodeURIComponent("Olá! Gostaria de solicitar: " + s + ". Preciso de atendimento da ConserteAí 24h.");
+return "https://wa.me/5511925331686?text=" +
+  encodeURIComponent(
+  `Olá! Encontrei o site da ConserteAí e gostaria de um orçamento para ${s}. Podem me ajudar?`
+  );
 }
 
 /* ─── Design tokens ─── */

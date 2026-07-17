@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://conserteai.com.br/sitemap.xml",
+sitemap: "https://www.xn--consertea-o5a.com.br/sitemap.xml",
   };
 }

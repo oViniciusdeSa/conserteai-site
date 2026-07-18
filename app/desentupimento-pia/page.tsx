@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Desentupimento de Pia em São Paulo | Atendimento 24h",
@@ -91,184 +92,185 @@ const serviceSchema = {
 export default function DesentupimentoPiaPage() {
   return (
     <>
+      <Header />
 
       <main className="min-h-screen bg-white">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
-        }}
-      />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+          }}
+        />
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchema).replace(/</g, "\\u003c"),
-        }}
-      />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(serviceSchema).replace(/</g, "\\u003c"),
+          }}
+        />
 
-      <section className="bg-slate-950 px-6 py-20 text-white">
-        <div className="mx-auto max-w-6xl">
-          <p className="mb-4 font-semibold text-orange-400">
-            Atendimento emergencial 24 horas
-          </p>
+        <section className="bg-slate-950 px-6 py-20 text-white">
+          <div className="mx-auto max-w-6xl">
+            <p className="mb-4 font-semibold text-orange-400">
+              Atendimento emergencial 24 horas
+            </p>
 
-          <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
-            Desentupimento de pia em São Paulo
-          </h1>
+            <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
+              Desentupimento de pia em São Paulo
+            </h1>
 
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-            Removemos obstruções causadas por gordura, restos de alimentos,
-            detergente solidificado e outros resíduos, utilizando equipamentos
-            profissionais e técnicas seguras para a tubulação.
-          </p>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
+              Removemos obstruções causadas por gordura, restos de alimentos,
+              detergente solidificado e outros resíduos, utilizando equipamentos
+              profissionais e técnicas seguras para a tubulação.
+            </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg bg-orange-500 px-6 py-4 font-bold text-white transition hover:bg-orange-600"
+              >
+                Solicitar orçamento no WhatsApp
+              </a>
+
+              <a
+                href="tel:+5511925331686"
+                className="rounded-lg border border-white px-6 py-4 font-bold text-white transition hover:bg-white hover:text-slate-950"
+              >
+                Ligar agora
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white px-6 py-16">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-3xl font-bold text-slate-900">
+              Principais causas de pia entupida
+            </h2>
+
+            <div className="mt-8 grid gap-6 md:grid-cols-3">
+              {[
+                {
+                  title: "Acúmulo de gordura",
+                  description:
+                    "Óleo, gordura e detergente podem endurecer dentro da tubulação e reduzir a passagem da água.",
+                },
+                {
+                  title: "Restos de alimentos",
+                  description:
+                    "Resíduos descartados na pia podem formar bloqueios no sifão e no encanamento.",
+                },
+                {
+                  title: "Objetos na tubulação",
+                  description:
+                    "Pequenos objetos e materiais inadequados podem impedir completamente o escoamento.",
+                },
+              ].map((item) => (
+                <article
+                  key={item.title}
+                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+                >
+                  <h3 className="text-xl font-bold text-slate-900">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-slate-600">
+                    {item.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-slate-100 px-6 py-16">
+          <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2">
+            <div>
+              <h2 className="text-3xl font-bold text-slate-900">
+                Como realizamos o desentupimento
+              </h2>
+
+              <p className="mt-5 leading-8 text-slate-700">
+                Primeiro identificamos o ponto e a possível causa da obstrução.
+                Depois utilizamos a técnica mais adequada para remover os resíduos
+                sem realizar quebras desnecessárias. Ao final, verificamos o fluxo
+                da água e orientamos o cliente sobre como evitar novos
+                entupimentos.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-3xl font-bold text-slate-900">
+                Por que escolher a ConserteAí?
+              </h2>
+
+              <ul className="mt-5 space-y-3 text-slate-700">
+                <li>✓ Atendimento 24 horas</li>
+                <li>✓ Equipe especializada</li>
+                <li>✓ Equipamentos profissionais</li>
+                <li>✓ Orçamento antes da execução</li>
+                <li>✓ Garantia de 90 dias</li>
+                <li>✓ Atendimento em São Paulo e municípios da RMSP</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white px-6 py-16">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="text-3xl font-bold text-slate-900">
+              Perguntas frequentes
+            </h2>
+
+            <div className="mt-8 space-y-5">
+              {faqItems.map((item) => (
+                <article
+                  key={item.question}
+                  className="rounded-xl border border-slate-200 bg-white p-6"
+                >
+                  <h3 className="text-lg font-bold text-slate-900">
+                    {item.question}
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-slate-600">
+                    {item.answer}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-orange-500 px-6 py-16 text-white">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-bold">
+              Sua pia está entupida? Fale com a ConserteAí
+            </h2>
+
+            <p className="mt-4 text-lg">
+              Solicite atendimento e receba uma orientação rápida pelo WhatsApp.
+            </p>
+
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg bg-orange-500 px-6 py-4 font-bold text-white transition hover:bg-orange-600"
+              className="mt-8 inline-block rounded-lg bg-white px-7 py-4 font-bold text-orange-600 transition hover:bg-orange-50"
             >
-              Solicitar orçamento no WhatsApp
+              Chamar no WhatsApp
             </a>
 
-            <a
-              href="tel:+5511925331686"
-              className="rounded-lg border border-white px-6 py-4 font-bold text-white transition hover:bg-white hover:text-slate-950"
-            >
-              Ligar agora
-            </a>
+            <div className="mt-8">
+              <Link href="/" className="font-semibold underline">
+                Voltar para a página inicial
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-6 py-16">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-slate-900">
-            Principais causas de pia entupida
-          </h2>
-
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {[
-              {
-                title: "Acúmulo de gordura",
-                description:
-                  "Óleo, gordura e detergente podem endurecer dentro da tubulação e reduzir a passagem da água.",
-              },
-              {
-                title: "Restos de alimentos",
-                description:
-                  "Resíduos descartados na pia podem formar bloqueios no sifão e no encanamento.",
-              },
-              {
-                title: "Objetos na tubulação",
-                description:
-                  "Pequenos objetos e materiais inadequados podem impedir completamente o escoamento.",
-              },
-            ].map((item) => (
-              <article
-                key={item.title}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
-              >
-                <h3 className="text-xl font-bold text-slate-900">
-                  {item.title}
-                </h3>
-
-                <p className="mt-3 leading-7 text-slate-600">
-                  {item.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-slate-100 px-6 py-16">
-        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-2">
-          <div>
-            <h2 className="text-3xl font-bold text-slate-900">
-              Como realizamos o desentupimento
-            </h2>
-
-            <p className="mt-5 leading-8 text-slate-700">
-              Primeiro identificamos o ponto e a possível causa da obstrução.
-              Depois utilizamos a técnica mais adequada para remover os resíduos
-              sem realizar quebras desnecessárias. Ao final, verificamos o fluxo
-              da água e orientamos o cliente sobre como evitar novos
-              entupimentos.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-3xl font-bold text-slate-900">
-              Por que escolher a ConserteAí?
-            </h2>
-
-            <ul className="mt-5 space-y-3 text-slate-700">
-              <li>✓ Atendimento 24 horas</li>
-              <li>✓ Equipe especializada</li>
-              <li>✓ Equipamentos profissionais</li>
-              <li>✓ Orçamento antes da execução</li>
-              <li>✓ Garantia de 90 dias</li>
-              <li>✓ Atendimento em São Paulo e municípios da RMSP</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-6 py-16">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-slate-900">
-            Perguntas frequentes
-          </h2>
-
-          <div className="mt-8 space-y-5">
-            {faqItems.map((item) => (
-              <article
-                key={item.question}
-                className="rounded-xl border border-slate-200 bg-white p-6"
-              >
-                <h3 className="text-lg font-bold text-slate-900">
-                  {item.question}
-                </h3>
-
-                <p className="mt-3 leading-7 text-slate-600">
-                  {item.answer}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-orange-500 px-6 py-16 text-white">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold">
-            Sua pia está entupida? Fale com a ConserteAí
-          </h2>
-
-          <p className="mt-4 text-lg">
-            Solicite atendimento e receba uma orientação rápida pelo WhatsApp.
-          </p>
-
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-block rounded-lg bg-white px-7 py-4 font-bold text-orange-600 transition hover:bg-orange-50"
-          >
-            Chamar no WhatsApp
-          </a>
-
-          <div className="mt-8">
-            <Link href="/" className="font-semibold underline">
-              Voltar para a página inicial
-            </Link>
-          </div>
-        </div>
-      </section>
-        </main>
+        </section>
+      </main>
     </>
   );
 }

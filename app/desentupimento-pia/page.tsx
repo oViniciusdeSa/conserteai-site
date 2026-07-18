@@ -90,7 +90,9 @@ const serviceSchema = {
 
 export default function DesentupimentoPiaPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <>
+
+      <main className="min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -266,6 +268,7 @@ export default function DesentupimentoPiaPage() {
           </div>
         </div>
       </section>
-    </main>
+        </main>
+    </>
   );
 }

@@ -44,30 +44,30 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "ConserteAí | Desentupidora 24h em São Paulo",
-    description:
-      "Atendimento 24 horas para desentupimentos, caça vazamentos e emergências hidráulicas em São Paulo e Grande SP.",
-    url: "/",
-    siteName: "ConserteAí",
-    locale: "pt_BR",
-    type: "website",
-    images: [
-      {
-        url: "/logo-conserteai.png",
-        width: 1200,
-        height: 630,
-        alt: "ConserteAí — Desentupimento e Hidráulica 24h",
-      },
-    ],
-  },
+  title: "ConserteAí | Desentupidora 24h em São Paulo",
+  description:
+    "Atendimento 24 horas para desentupimentos, caça vazamentos e emergências hidráulicas em São Paulo e Grande SP.",
+  url: "/",
+  siteName: "ConserteAí",
+  locale: "pt_BR",
+  type: "website",
+  images: [
+    {
+      url: "/og-conserteai.png",
+      width: 1200,
+      height: 630,
+      alt: "ConserteAí — Desentupimento e Hidráulica 24h",
+    },
+  ],
+},
 
-  twitter: {
-    card: "summary_large_image",
-    title: "ConserteAí | Desentupidora 24h em São Paulo",
-    description:
-      "Desentupimento, caça vazamentos e hidráulica emergencial 24 horas em São Paulo e Grande SP.",
-    images: ["/logo-conserteai.png"],
-  },
+twitter: {
+  card: "summary_large_image",
+  title: "ConserteAí | Desentupidora 24h em São Paulo",
+  description:
+    "Desentupimento, caça vazamentos e hidráulica emergencial 24 horas em São Paulo e Grande SP.",
+  images: ["/og-conserteai.png"],
+},
 
   icons: {
     icon: "/favicon.ico",

@@ -1,4 +1,4 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 
 const baseUrl = "https://www.xn--consertea-o5a.com.br";
 
@@ -30,6 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/desentupimento-ralo`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/desentupimento-caixa-gordura`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,

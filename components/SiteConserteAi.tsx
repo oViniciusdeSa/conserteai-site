@@ -66,7 +66,7 @@ const GLOBAL_CSS = `
 
   /* Navbar */
   #nav { background: #ffffff; position: sticky; top: 40px; z-index: 199; border-bottom: 1px solid ${C.border}; box-shadow: 0 1px 8px rgba(0,0,0,.07); }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 78px; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 82px; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
   .nav-logo { font-family: 'Montserrat',sans-serif; font-size: 1.3rem; font-weight: 800; color: ${C.blue}; }
   .nav-logo span { color: ${C.orange}; }
   .nav-links { display: flex; align-items: center; gap: 24px; }
@@ -250,11 +250,25 @@ const LogoMark = ({ size = 36 }: { size?: number }) => {
 
 /* Nav logo: versão padrão para fundo claro */
 const NavLogo = () => (
-  <a href="#inicio" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none" }}>
+  <a
+    href="#inicio"
+    style={{
+      display: "inline-flex",
+      alignItems: "center",
+      textDecoration: "none",
+      flexShrink: 0,
+    }}
+  >
     <img
       src={logoImg}
       alt="ConserteAí 24h — Desentupimento e Hidráulica"
-      style={{ height: 62, width: "auto", display: "block" }}
+      style={{
+        height: 68,
+        width: "auto",
+        maxWidth: 260,
+        objectFit: "contain",
+        display: "block",
+      }}
     />
   </a>
 );

@@ -254,7 +254,7 @@ const NavLogo = () => (
     <img
       src={logoImg}
       alt="ConserteAí 24h — Desentupimento e Hidráulica"
-      style={{ height: 48, width: "auto", display: "block" }}
+      style={{ height: 62, width: "auto", display: "block" }}
     />
   </a>
 );

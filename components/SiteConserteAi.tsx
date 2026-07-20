@@ -66,7 +66,7 @@ const GLOBAL_CSS = `
 
   /* Navbar */
   #nav { background: #ffffff; position: sticky; top: 40px; z-index: 199; border-bottom: 1px solid ${C.border}; box-shadow: 0 1px 8px rgba(0,0,0,.07); }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 78px; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
   .nav-logo { font-family: 'Montserrat',sans-serif; font-size: 1.3rem; font-weight: 800; color: ${C.blue}; }
   .nav-logo span { color: ${C.orange}; }
   .nav-links { display: flex; align-items: center; gap: 24px; }
@@ -1437,7 +1437,7 @@ function GalleryItem({ item, delay }: { item: typeof GALLERY_ITEMS[0]; delay: nu
         transition: "opacity .28s",
       }}>
         {/* Category icon */}
-        <div style={{ width: 48, height: 48, borderRadius: "50%", border: "2px solid rgba(255,255,255,.3)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ width: 48, height: 62, borderRadius: "50%", border: "2px solid rgba(255,255,255,.3)", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={C.orange} strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
         </div>
         <p style={{ color: "#fff", fontFamily: "'Montserrat',sans-serif", fontWeight: 700, fontSize: ".95rem", textAlign: "center", lineHeight: 1.35 }}>

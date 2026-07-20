@@ -386,6 +386,7 @@ type SvcEntry = {
   desc: string;
   btnColor: string;
   btnHover: string;
+  href: string;
 };
 
 const SERVICES: SvcEntry[] = [
@@ -395,6 +396,7 @@ const SERVICES: SvcEntry[] = [
     iconKey: "esgoto",
     badge: { text: "Mais Solicitado", bg: C.orange },
     title: "Desentupimento de Esgoto",
+    href: "/desentupimento-esgoto",
     waMsg: "Gostaria de solicitar: Desentupimento de Esgoto",
     time: "~45 min",
     desc: "Desobstrução completa de redes de esgoto residenciais e comerciais com equipamento de hidrojato profissional. Sem sujeira e com garantia.",
@@ -406,6 +408,7 @@ const SERVICES: SvcEntry[] = [
     iconKey: "pia",
     badge: null,
     title: "Desentupimento de Pia",
+    href: "/desentupimento-pia",
     waMsg: "Gostaria de solicitar: Desentupimento de Pia",
     time: "~30 min",
     desc: "Desentupimento rápido de pias de cozinha e banheiro. Eliminamos gordura, resíduos e obstruções em minutos com garantia.",
@@ -417,6 +420,7 @@ const SERVICES: SvcEntry[] = [
     iconKey: "vaso",
     badge: null,
     title: "Desentupimento de Vaso Sanitário",
+    href: "/desentupimento-vaso",
     waMsg: "Gostaria de solicitar: Desentupimento de Vaso Sanitário",
     time: "~25 min",
     desc: "Solução eficiente para vasos sanitários entupidos com técnicas especializadas. Resolvemos sem sujeira e com garantia.",
@@ -428,6 +432,7 @@ const SERVICES: SvcEntry[] = [
     iconKey: "gordura",
     badge: { text: "Para Empresas", bg: C.blue },
     title: "Limpeza de Caixa de Gordura",
+    href: "/desentupimento-caixa-gordura",
     waMsg: "Gostaria de solicitar: Limpeza de Caixa de Gordura",
     time: "~60 min",
     desc: "Limpeza e higienização completa de caixas de gordura para residências, restaurantes e estabelecimentos comerciais. Normas sanitárias cumpridas.",
@@ -439,6 +444,7 @@ const SERVICES: SvcEntry[] = [
     iconKey: "vaz",
     badge: { text: "Tecnologia", bg: C.blue },
     title: "Caça Vazamentos",
+    href: "/caca-vazamento",
     waMsg: "Gostaria de solicitar: Caça Vazamentos",
     time: "~90 min",
     desc: "Detecção precisa de vazamentos com equipamento eletrônico de última geração. Localizamos sem quebrar paredes desnecessariamente.",
@@ -450,6 +456,7 @@ const SERVICES: SvcEntry[] = [
     iconKey: "hidro",
     badge: { text: "Emergência", bg: C.orange },
     title: "Hidráulica Emergencial",
+    href: "/hidrojateamento",
     waMsg: "Gostaria de solicitar: Hidráulica Emergencial",
     time: "~60 min",
     desc: "Reparos e instalações hidráulicas de emergência. Registros, tubulações, caixas d'água — resolvemos no mesmo dia, 24 horas.",
@@ -461,6 +468,7 @@ const SERVICES: SvcEntry[] = [
     iconKey: "reab",
     badge: { text: "Sem Quebra-Quebra", bg: C.blue },
     title: "Reabilitação de Tubulação",
+    href: "/video-inspecao",
     waMsg: "Gostaria de solicitar: Reabilitação de Tubulação",
     time: "~4h",
     desc: "Recuperamos o interior de tubulações antigas ou danificadas sem quebrar paredes, pisos ou jardins. Tecnologia sem escavação que restaura a tubulação por dentro, com durabilidade e economia.",
@@ -797,7 +805,6 @@ function Stats() {
 
 function SvcCard({ s, delay }: { s: SvcEntry; delay: number }) {
   const [hov, setHov] = useState(false);
-  const waLink = `https://wa.me/5511925331686?text=${encodeURIComponent(s.waMsg + ". Preciso de atendimento da ConserteAí 24h.")}`;
   return (
     <div
       className="rev"
@@ -886,23 +893,36 @@ function SvcCard({ s, delay }: { s: SvcEntry; delay: number }) {
         </p>
 
         {/* CTA */}
-        <a
-          href={waLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-            padding: "11px 16px", borderRadius: 6,
-            background: s.btnColor, color: "#fff",
-            fontFamily: "'Montserrat',sans-serif", fontWeight: 700, fontSize: ".87rem",
-            transition: "background .15s, transform .15s",
-            marginTop: 2,
-          }}
-          onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = s.btnHover; el.style.transform = "translateY(-1px)"; }}
-          onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = s.btnColor; el.style.transform = "none"; }}
-        >
-          <WaIcon size={15} color="#fff" />Solicitar Agora
-        </a>
+       <a
+  href={s.href}
+  style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+    padding: "11px 16px",
+    borderRadius: 6,
+    background: s.btnColor,
+    color: "#fff",
+    fontFamily: "'Montserrat',sans-serif",
+    fontWeight: 700,
+    fontSize: ".87rem",
+    transition: "background .15s, transform .15s",
+    marginTop: 2,
+  }}
+  onMouseEnter={e => {
+    const el = e.currentTarget as HTMLElement;
+    el.style.background = s.btnHover;
+    el.style.transform = "translateY(-1px)";
+  }}
+  onMouseLeave={e => {
+    const el = e.currentTarget as HTMLElement;
+    el.style.background = s.btnColor;
+    el.style.transform = "none";
+  }}
+>
+  Ver detalhes do serviço
+</a>
       </div>
     </div>
   );
